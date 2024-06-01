@@ -5,6 +5,7 @@ require 'json'
 require 'fileutils'
 
 GITHUB_USERNAME = 'andrewhwaller'
+ACCESS_TOKEN = ENV['ACCESS_TOKEN']
 OUTPUT_FILE = './src/_data/repos.json'
 PER_PAGE = 100 # Maximum allowed per page
 
