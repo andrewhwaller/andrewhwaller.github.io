@@ -16,6 +16,9 @@ jobs:
         with:
           bundler-cache: true
 
+      - name: Install dependencies
+        run: bundle install
+
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
@@ -23,13 +26,10 @@ jobs:
           cache: "yarn"
       - run: yarn install
 
-      - name: Install dependencies
-        run: bundle install
-
       - name: Fetch repo data
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        run: ruby scripts/fetch_repos.rb
+        run: bundle exec ruby scripts/fetch_repos.rb
 
       - name: Build
         env:
