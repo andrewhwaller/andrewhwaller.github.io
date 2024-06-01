@@ -23,6 +23,11 @@ jobs:
           cache: "yarn"
       - run: yarn install
 
+      - name: Fetch repo data
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        run: ruby scripts/fetch_repos.rb
+
       - name: Build
         env:
           BRIDGETOWN_ENV: production
