@@ -37,5 +37,5 @@ def save_repos(repos)
   File.write(OUTPUT_FILE, JSON.pretty_generate(repos))
 end
 
-repos = fetch_all_repos
+repos = fetch_all_repos.reject { |repo| repo["is_template"] }.sort_by! { |repo| repo["created_at"] }.reverse
 save_repos(repos)
