@@ -17,12 +17,7 @@
 body {
   background: var(--body-background);
   color: var(--body-color);
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    "Helvetica", "Arial", sans-serif;
   margin: 0 8px;
-  font-size: 108%;
-  line-height: 1.5;
 }
 
 a {
@@ -32,12 +27,7 @@ a {
 }
 
 h1 {
-  margin: 1rem 0 3rem;
-  text-align: center;
-  font-weight: 900;
-  font-size: 2.5rem;
-  color: var(--heading-color);
-  line-height: 1.2;
+  @apply text-4xl font-bold tracking-tighter text-zinc-800 dark:text-zinc-100 sm:text-5xl;
 }
 
 body > header {
