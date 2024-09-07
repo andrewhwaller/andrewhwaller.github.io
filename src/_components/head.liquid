@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 {% capture resource_title %}{{ title | strip_html | strip_newlines }}{% endcapture %}
 <title>{% if resource_title != "Index" %}{{ resource_title | escape }} | {{ metadata.title | escape }}{% else %}{{ metadata.title | escape }}: {{ metadata.tagline | escape }}{% endif %}</title>
-
+<link rel="icon" href="{{ metadata.favicon }}" type="image/x-icon" />
 <meta name="description" content="{{ metadata.description }}" />
 
 <link rel="stylesheet" href="{% asset_path css %}" />
