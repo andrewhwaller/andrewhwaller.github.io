@@ -1,0 +1,6 @@
+<div class="flex flex-col gap-y-6">
+  {% for repo in repos %}
+    {% assign url = "https://slides.lukanpriorities.com/" | append: repo.name %}
+    {% render "presentation_card", repo: repo, url: url, topics: topics %}
+  {% endfor %}
+</div>

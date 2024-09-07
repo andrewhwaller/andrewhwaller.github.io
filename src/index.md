@@ -6,12 +6,8 @@ layout: default
 ---
 
 # Presentations
-{% for repo in site.data.repos %}
-  {% assign url = "https://slides.lukanpriorities.com/" | append: repo.name %}
-- [{{ repo.name }}]({{ url }})
-{{ repo.topics.reject("slides") | join: ", " }}
-{{ repo.description }}
-{% endfor %}
+
+{% render "presentation_list", repos: site.data.repos %}
 
 ----
 {:style="text-align:center"}
