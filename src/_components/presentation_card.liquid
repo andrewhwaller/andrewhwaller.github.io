@@ -1,19 +1,17 @@
 <article class="flex flex-col items-start gap-y-2 justify-between">
-  <div class="prose">
-    <a href="{{ url }}" target="_blank" class="m-0">
-      {{ repo.name }}
-    </a>
-    {% if repo.description %}
-      <p>{{ repo.description }}</p>
-    {% endif %}
-    <div class="flex items-center gap-x-2 text-xs not-prose mt-3">
-      <span>
-        Last updated: 
-      </span>
-      <time>{{ repo.updated_at | date: "%b %d, %Y" }}</time>
-      {% for topic in topics %}
-        <span>{{ topic }}</span>
-      {% endfor %}
-    </div>
+  <a href="{{ url }}" target="_blank" class="m-0 underline font-semibold text-rose-500 hover:text-rose-600">
+    {{ repo.name }}
+  </a>
+  {% if repo.description %}
+    <p>{{ repo.description }}</p>
+  {% endif %}
+  <div class="flex items-center gap-x-2 text-xs mt-3">
+    <span>
+      Last updated: 
+    </span>
+    <time>{{ repo.updated_at | date: "%b %d, %Y" }}</time>
+    {% for topic in topics %}
+      <span>{{ topic }}</span>
+    {% endfor %}
   </div>
 </article>
